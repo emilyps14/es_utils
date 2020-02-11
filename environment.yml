@@ -1,0 +1,24 @@
+name: changlab
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pip
+  - ipython
+  - numpy
+  - matplotlib
+  - h5py
+  - scipy
+  - scikit-learn
+  - patsy
+  - pandas
+  - gitpython
+  - xarray
+  - ffmpeg
+  - mne
+  - pip:
+      - statsmodels
+      - group-lasso
+      - pysurfer
+      - pyqt5
