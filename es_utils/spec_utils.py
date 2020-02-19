@@ -145,10 +145,10 @@ def _get_sliding_windows(fs,movingwin,Nt):
 
 
 def _process_freqaxis(fs, NFFT, f_targets, sides):
+    freqs = np.linspace(0, fs, NFFT, endpoint=False)
     if sides == 'onesided':
-        freqs = np.linspace(0, fs / 2, NFFT / 2 + 1)
-    else:
-        freqs = np.linspace(0, fs, NFFT, endpoint=False)
+        # freqs = np.linspace(0, fs / 2, NFFT / 2 + 1)
+        freqs = freqs[:int(np.floor(NFFT/2+1))]
 
     if f_targets is not None:
         findx = [np.argmin(np.abs(freqs-ftarg)) for ftarg in f_targets]
