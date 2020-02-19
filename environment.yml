@@ -8,17 +8,18 @@ dependencies:
   - ipython
   - numpy
   - matplotlib
-  - h5py
-  - scipy
-  - scikit-learn
-  - patsy
-  - pandas
-  - gitpython
-  - xarray
-  - ffmpeg
-  - mne
+#  - h5py
+#  - scipy
+#  - scikit-learn
+#  - patsy
+#  - pandas
+#  - gitpython
+#  - xarray
+#  - ffmpeg
+#  - mne
   - pip:
-      - statsmodels
-      - group-lasso
-      - pysurfer
-      - pyqt5
+#      - statsmodels
+#      - group-lasso
+      - nitime
+#      - pysurfer
+#      - pyqt5
