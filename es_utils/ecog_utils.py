@@ -17,6 +17,22 @@ def gridOrient(subject):
     return gridOrient_zeroIndexed
 
 
+def compute_time_in_trial(T,Fs,stim_onset_inds,max_trial_len,trial_onset):
+    assert all([s2>s1 for s1,s2 in zip(stim_onset_inds[:-1],stim_onset_inds[1:])]),\
+           'stim_onset_inds must be sorted.'
+    trial_window = np.arange(Fs*max_trial_len)+np.ceil(Fs*trial_onset)
+    trial_timeaxis = trial_window / Fs
+
+    time_in_trial = np.zeros(T)*np.nan
+    trial_number = np.zeros(T)*np.nan
+    for i,stimOnset in enumerate(stim_onset_inds):
+        dat_inds = (stimOnset + trial_window).astype(int)
+        time_in_trial[dat_inds] = trial_timeaxis # may overwrite the end of the previous trial
+        trial_number[dat_inds] = i
+
+    return time_in_trial,trial_number
+
+
 def imshow_on_electrode_grid(toplot,gridOrient_0indexed,ylabels=None,titles=None,fignum=None,cl=None,cmap='RdBu_r',
                              colorbar='horizontal',blnElectrodeNumbers=False):
     # There will be nrows x ncols subplots
