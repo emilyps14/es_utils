@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def gridOrient(subject):
 
-    if subject in ['EC183','EC194','EC195','EC172']:
+    if subject in ['EC183','EC194','EC195','EC172','EC36']:
         gridOrient_zeroIndexed = np.rot90(np.reshape(range(256),(16,16)),2).T
     elif subject in ['EC186','EC188','EC199','EC142']:
         gridOrient_zeroIndexed = np.vstack([np.flipud(np.reshape(range(128),(8,16))),np.flipud(np.reshape(range(128,256),(8,16)))])
