@@ -7,5 +7,11 @@ setup(
     url='',
     license='',
     author='estephen',
-    description=''
+    description='',
+    install_requires=[
+         'matplotlib',
+         'numpy',
+         'nitime',
+         'mayavi'
+    ]
 )
